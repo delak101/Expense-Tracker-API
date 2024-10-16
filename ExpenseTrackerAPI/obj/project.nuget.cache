@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/b6Vt4LDIL8=",
+  "dgSpecHash": "LPCjAXkN1cg=",
   "success": true,
   "projectFilePath": "E:\\Back-end\\Projects\\Expense Tracker API\\ExpenseTrackerAPI\\ExpenseTrackerAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Delak\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Delak\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Delak\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Delak\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Delak\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.10\\microsoft.aspnetcore.authentication.jwtbearer.8.0.10.nupkg.sha512",
     "C:\\Users\\Delak\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.10\\microsoft.aspnetcore.openapi.8.0.10.nupkg.sha512",

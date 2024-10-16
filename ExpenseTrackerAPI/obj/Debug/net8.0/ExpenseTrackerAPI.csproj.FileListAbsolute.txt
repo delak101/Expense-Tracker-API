@@ -143,3 +143,5 @@ E:\Back-end\Projects\Expense Tracker API\ExpenseTrackerAPI\obj\Debug\net8.0\refi
 E:\Back-end\Projects\Expense Tracker API\ExpenseTrackerAPI\obj\Debug\net8.0\ExpenseTrackerAPI.pdb
 E:\Back-end\Projects\Expense Tracker API\ExpenseTrackerAPI\obj\Debug\net8.0\ExpenseTrackerAPI.genruntimeconfig.cache
 E:\Back-end\Projects\Expense Tracker API\ExpenseTrackerAPI\obj\Debug\net8.0\ref\ExpenseTrackerAPI.dll
+E:\Back-end\Projects\Expense Tracker API\ExpenseTrackerAPI\obj\Debug\net8.0\ExpenseTrackerAPI.sourcelink.json
+E:\Back-end\Projects\Expense Tracker API\ExpenseTrackerAPI\bin\Debug\net8.0\BCrypt.Net-Next.dll

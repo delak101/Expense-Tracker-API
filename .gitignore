@@ -1,0 +1,67 @@
+# Ignore Visual Studio temporary files, build results, and
+# build directories.
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore build output directories
+bin/
+obj/
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Ignore build results
+*.dll
+*.exe
+*.app
+*.so
+*.dylib
+*.pdb
+*.cache
+*.ilk
+*.log
+*.lib
+*.obj
+*.mpdb
+*.pgd
+*.pgc
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+
+# Ignore Visual Studio Code workspace settings
+.vscode/
+
+# Ignore user-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore other files
+*.ide
+*.sln.iml
+*.sln.ide
+*.sln.ide.iml
+
+# Ignore application settings
+appsettings.json
+appsettings.Development.json
+
+# Ignore static web assets
+staticwebassets/

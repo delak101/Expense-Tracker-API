@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using ExpenseTrackerAPI.Models;
 
+namespace ExpenseTrackerAPI.Context;
 public class ExpenseTrackerContext : DbContext
 {
     public DbSet<User> Users { get; set; }
