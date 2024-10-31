@@ -18,16 +18,14 @@ public class AuthController(ETContext context) : ControllerBase
     public async Task<ActionResult<User>> Register(RegisterDto registerDto)
     {
         if (await UserExists(registerDto.Username)) return BadRequest("username is taken");
-        {
-            
-        }
+        
         using var hmac = new HMACSHA3_512();
 
         var user = new User()
         {
             Username = registerDto.Username.ToLower(),
             PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-            PasswordSalt = hmac.Key
+            PasswordSalt = hmac.Key //I'll use this key in the login to hash the entered password and compare "hashedPasswords"
         };
         
         context.Users.Add(user);
@@ -36,6 +34,27 @@ public class AuthController(ETContext context) : ControllerBase
         return user;
     }
 
+
+    [HttpPost("login")]
+    public async Task<ActionResult<User>> Login(LoginDto loginDto)
+    {
+        var user = await context.Users.FirstOrDefaultAsync(x => x.Username == loginDto.Username.ToLower());
+        
+        if (user == null) return Unauthorized("invalid username or password");
+        
+        using var hmac = new HMACSHA3_512(user.PasswordSalt);
+        var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+
+        for (int i = 0; i < computedHash.Length; i++)
+        {
+            if(computedHash[i] != user.PasswordHash[i]) return Unauthorized("Incorrect password");            
+        }
+        
+        return user;
+    }
+    
+    
+    
     private async Task<bool> UserExists(string username)
     {
         return await context.Users.AnyAsync(u => u.Username.ToLower() == username.ToLower()); 

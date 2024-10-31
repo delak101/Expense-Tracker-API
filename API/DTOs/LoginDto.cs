@@ -2,10 +2,9 @@
 
 namespace API.DTOs;
 
-public class RegisterDto
+public class LoginDto
 {
     [Required]
-    [MaxLength(28)]
     public string Username { get; set; }
     [Required]
     public string Password { get; set; }
