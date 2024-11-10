@@ -132,3 +132,12 @@ E:\Back-end\Projects\Expense-Tracker-API\API\obj\Debug\net8.0\refint\API.dll
 E:\Back-end\Projects\Expense-Tracker-API\API\obj\Debug\net8.0\API.pdb
 E:\Back-end\Projects\Expense-Tracker-API\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 E:\Back-end\Projects\Expense-Tracker-API\API\obj\Debug\net8.0\ref\API.dll
+E:\Back-end\Projects\Expense-Tracker-API\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Back-end\Projects\Expense-Tracker-API\API\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+E:\Back-end\Projects\Expense-Tracker-API\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Back-end\Projects\Expense-Tracker-API\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Back-end\Projects\Expense-Tracker-API\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\Back-end\Projects\Expense-Tracker-API\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\Back-end\Projects\Expense-Tracker-API\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Back-end\Projects\Expense-Tracker-API\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\Back-end\Projects\Expense-Tracker-API\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

@@ -5,6 +5,7 @@ using System.Text;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,10 +13,10 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AuthController(ETContext context) : ControllerBase
+public class AuthController(ETContext context, ITokenService tokenService) : ControllerBase
 {
     [HttpPost("register")] //post : api/auth/register
-    public async Task<ActionResult<User>> Register(RegisterDto registerDto)
+    public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
     {
         if (await UserExists(registerDto.Username)) return BadRequest("username is taken");
         
@@ -31,12 +32,16 @@ public class AuthController(ETContext context) : ControllerBase
         context.Users.Add(user);
         await context.SaveChangesAsync();
 
-        return user;
+        return new UserDto
+        {
+            Username = user.Username,
+            Token = tokenService.CreateToken(user)
+        };
     }
 
 
     [HttpPost("login")]
-    public async Task<ActionResult<User>> Login(LoginDto loginDto)
+    public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
         var user = await context.Users.FirstOrDefaultAsync(x => x.Username == loginDto.Username.ToLower());
         
@@ -50,10 +55,12 @@ public class AuthController(ETContext context) : ControllerBase
             if(computedHash[i] != user.PasswordHash[i]) return Unauthorized("Incorrect password");            
         }
         
-        return user;
+        return new UserDto
+        {
+            Username = user.Username,
+            Token = tokenService.CreateToken(user) // Returns JWT to client on successful login
+        };
     }
-    
-    
     
     private async Task<bool> UserExists(string username)
     {

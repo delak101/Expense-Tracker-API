@@ -11,6 +11,12 @@ public class ETContext(DbContextOptions options) : DbContext(options)
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>().HasIndex(u => u.Username).IsUnique();
+        modelBuilder.Entity<Expense>()
+            .HasOne(e => e.User)
+            .WithMany(u => u.Expenses)
+            .HasForeignKey(e => e.UserId)
+            .OnDelete(DeleteBehavior.Cascade); // Cascade delete if needed
+
     }
 
 }
