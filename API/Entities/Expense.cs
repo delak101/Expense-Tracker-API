@@ -14,6 +14,12 @@ public class Expense
     public DateTime Date { get; set; } = DateTime.UtcNow;
     [Required]
     public ExpenseCategory Category { get; set; }
+    /*
+     * unfortunately this will take the enum index
+     * 0 -> Groceries, 1 -> Leisure
+     * can be solved by updating json parsing options or taking it as string then parsing it in the code
+     * but i'll keep it like this for now
+     */
     
     //user foreign key
     public int UserId { get; set; }

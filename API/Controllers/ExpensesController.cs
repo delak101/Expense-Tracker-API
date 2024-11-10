@@ -24,6 +24,20 @@ public class ExpensesController(ETContext context) : ControllerBase
         return CreatedAtAction("GetExpense", new { id = expense.Id }, expense);
     }
 
+    [HttpGet("GetExpense/{id}")]
+    public async Task<ActionResult<Expense>> GetExpense(int id)
+    {
+        var userId = int.Parse(User.FindFirst("UserId").Value);
+        var expense = await context.Expenses
+            .Where(e => e.UserId == userId && e.Id == id)
+            .FirstOrDefaultAsync();
+
+        if (expense == null)
+            return NotFound();
+
+        return expense;
+    }
+
     // GET: api/expenses
     [HttpGet("GetExpenses")]
     public async Task<ActionResult<IEnumerable<Expense>>> GetExpenses()
